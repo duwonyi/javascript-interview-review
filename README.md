@@ -39,6 +39,31 @@ console.log("b defined? " + (typeof b !== 'undefined'));
 
 ---
 
+<a name='1.3'>
+
+### 1.3
+What will the code below output to the console and why?
+
+```javascript
+var myObject = {
+    foo: "bar",
+    func: function() {
+        var self = this;
+        console.log("outer func:  this.foo = " + this.foo);
+        console.log("outer func:  self.foo = " + self.foo);
+        (function() {
+            console.log("inner func:  this.foo = " + this.foo);
+            console.log("inner func:  self.foo = " + self.foo);
+        }());
+    }
+};
+myObject.func();
+```
+
+[See Answer](#a1.3)
+
+---
+
 <a name='2.0'/>
 
 ## 2.0 My own
@@ -71,7 +96,25 @@ console.log("b defined? " + (typeof b !== 'undefined'));
 
 Because `b` is in the global area, the output of 2nd console is `true`. In strict mode that statement will make a runtime error of `ReferenceError`.
 
+[JSbin](http://jsbin.com/pakicav/edit?js,console)
+
 [Back to Question](#1.2)
+
+---
+
+<a name='a1.3'/>
+
+### 1.3
+`outer func:  this.foo = bar`<br>
+`outer func:  self.foo = bar`<br>
+`inner func:  this.foo = undefined`<br>
+`inner func:  self.foo = bar`
+
+The context of inner function is global object, that is window. Because there is not a `foo` variable in window, `this.foo` is `undefined`. The `self` variable, is closure to outer function, has a reference to the scope of outer function, so it can access to `foo`.
+
+[JSbin](http://jsbin.com/pakicav/edit?js,console)
+
+[Back to Question](#1.3)
 
 ---
 
