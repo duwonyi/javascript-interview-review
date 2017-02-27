@@ -64,6 +64,16 @@ myObject.func();
 
 ---
 
+<a name='1.4'/>
+
+### 1.4
+
+What is the significance of, and reason for, wrapping the entire content of a JavaScript source file in a function block?
+
+[See Answer](#a1.4)
+
+---
+
 <a name='2.0'/>
 
 ## 2.0 My own
@@ -80,7 +90,7 @@ myObject.func();
 
 <a name='a1.1'/>
 
-### 1.1
+### A1.1
 `typeof` operator in JavaScript thinks that `null` variable is `'object'`. Therefore, if `bar` is `null`, `true` is returned.
 `typeof bar === "object" && bar !== null` is a solution.
 
@@ -90,7 +100,7 @@ myObject.func();
 
 <a name='a1.2'/>
 
-### 1.2
+### A1.2
 `a defined? false`<br>
 `b defined? true`
 
@@ -104,7 +114,7 @@ Because `b` is in the global area, the output of 2nd console is `true`. In stric
 
 <a name='a1.3'/>
 
-### 1.3
+### A1.3
 `outer func:  this.foo = bar`<br>
 `outer func:  self.foo = bar`<br>
 `inner func:  this.foo = undefined`<br>
@@ -112,9 +122,19 @@ Because `b` is in the global area, the output of 2nd console is `true`. In stric
 
 The context of inner function is global object, that is window. Because there is not a `foo` variable in window, `this.foo` is `undefined`. The `self` variable, is closure to outer function, has a reference to the scope of outer function, so it can access to `foo`.
 
-[JSbin](http://jsbin.com/pakicav/edit?js,console)
+[JSbin](http://jsbin.com/javove/edit?js,console)
 
 [Back to Question](#1.3)
+
+---
+
+<a name='a1.4'/>
+
+### A1.4
+
+It is important to avoid the namespace collision between different libs and modules. Most popular libs use this way to provie a private namespace.
+
+[Back to Question](#1.4)
 
 ---
 
