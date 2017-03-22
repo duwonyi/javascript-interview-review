@@ -74,6 +74,43 @@ What is the significance of, and reason for, wrapping the entire content of a Ja
 
 ---
 
+<a name='1.5'/>
+
+### 1.5
+
+What is the significance, and what are the benefits, of including 'use strict' at the beginning of a JavaScript source file?
+
+[See Answer](#a1.5)
+
+---
+
+<a name='1.6'/>
+
+### 1.6
+
+Consider the two functions below. Will they both return the same thing? Why or why not?
+
+```javascript
+function foo1()
+{
+  return {
+      bar: "hello"
+  };
+}
+
+function foo2()
+{
+  return
+  {
+      bar: "hello"
+  };
+}
+```
+
+[See Answer](#a1.6)
+
+---
+
 <a name='2.0'/>
 
 ## 2.0 My own
@@ -135,6 +172,26 @@ The context of inner function is global object, that is window. Because there is
 It is important to avoid the namespace collision between different libs and modules. Most popular libs use this way to provie a private namespace.
 
 [Back to Question](#1.4)
+
+---
+
+<a name='a1.5'/>
+
+### A1.5
+
+It prevents accidental global variables. a undeclared variable don't become a global variable. Referencing `this` value of `null` or `undefined` throws an error. It disallow duplicate property names or duplicate argument values. Makes `eval()` safer. Do not delete non-configurable properties.
+
+[Back to Question](#1.5)
+
+---
+
+<a name='a1.6'/>
+
+### 1.6
+
+`foo1` returns object(`{bar: "hello"}`) but `foo2` returns `undefined`, because in `foo2` a semicolon is inserted automactically after return statement.
+
+[Back to Question](#1.6)
 
 ---
 
