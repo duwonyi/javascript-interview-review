@@ -111,6 +111,30 @@ function foo2()
 
 ---
 
+<a name='1.7'/>
+
+### 1.7
+
+What is NaN? What is its type? How can you reliably test if a value is equal to NaN?
+
+[See Answer](#a1.7)
+
+---
+
+<a name='1.8'/>
+
+### 1.8
+
+What will the code below output? Explain your answer.
+```javascript
+console.log(0.1 + 0.2);
+console.log(0.1 + 0.2 == 0.3);
+```
+
+[See Answer](#a1.8)
+
+---
+
 <a name='2.0'/>
 
 ## 2.0 My own
@@ -192,6 +216,28 @@ It prevents accidental global variables. a undeclared variable don't become a gl
 `foo1` returns object(`{bar: "hello"}`) but `foo2` returns `undefined`, because in `foo2` a semicolon is inserted automactically after return statement.
 
 [Back to Question](#1.6)
+
+---
+
+<a name='a1.7'/>
+
+### 1.7
+
+`NaN` means not to evluate as Number. It results from an operation could not be perforemd because one of the operands was non-numeric. It is used to test a value by Number.isNaN() function or `value !== value`.
+
+[Back to Question](#1.7)
+
+---
+
+<a name='a1.8'/>
+
+### 1.8
+
+Numbers in JavaScript are all floating point precision.
+
+[JSbin](http://jsbin.com/vezodop/edit?js,console)
+
+[Back to Question](#1.8)
 
 ---
 
